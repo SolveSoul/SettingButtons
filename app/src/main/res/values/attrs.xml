@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SettingButton">
+        <attr name="titleText" format="string" />
+        <attr name="descriptionText" format="string" />
+        <attr name="titleForeground" format="color" />
+        <attr name="descriptionForeground" format="color" />
+    </declare-styleable>
+
+</resources>
