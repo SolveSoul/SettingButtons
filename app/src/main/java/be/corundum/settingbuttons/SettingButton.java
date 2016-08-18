@@ -2,6 +2,8 @@ package be.corundum.settingbuttons;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -13,6 +15,9 @@ import android.widget.TextView;
  * This custom component is basically a button with a title and description TextView
  */
 public class SettingButton extends LinearLayout {
+
+    public static final int BORDERS_NONE = 0;
+    public static final int BORDERS_BOTTOM = 1;
 
     private TextView mTitle;
     private TextView mDescription;
@@ -38,12 +43,21 @@ public class SettingButton extends LinearLayout {
         }
 
         TypedArray styleAttributes = getContext().obtainStyledAttributes(attrs, R.styleable.SettingButton);
-        setTitle(styleAttributes.getString(R.styleable.SettingButton_titleText));
-        setDescription(styleAttributes.getString(R.styleable.SettingButton_descriptionText));
-        setTitleTextColor(styleAttributes.getColor(R.styleable.SettingButton_titleForeground, getResources().getColor(android.R.color.black)));
-        setDescriptionTextColor(styleAttributes.getColor(R.styleable.SettingButton_descriptionForeground, getResources().getColor(android.R.color.darker_gray)));
+        setTitle(styleAttributes.getString(R.styleable.SettingButton_sbTitleText));
+        setDescription(styleAttributes.getString(R.styleable.SettingButton_sbDescriptionText));
+        setTitleTextColor(styleAttributes.getColor(R.styleable.SettingButton_sbTitleForeground, getResources().getColor(android.R.color.black)));
+        setDescriptionTextColor(styleAttributes.getColor(R.styleable.SettingButton_sbDescriptionForeground, getResources().getColor(android.R.color.darker_gray)));
+        setBorders(getBordersDrawableById(styleAttributes.getInt(R.styleable.SettingButton_sbBorders, 0)));
 
         styleAttributes.recycle();
+    }
+
+    public void setBorders(@DrawableRes int backgroundDrawable) {
+        setBorders(getContext().getResources().getDrawable(backgroundDrawable));
+    }
+
+    public void setBorders(Drawable backgroundDrawable) {
+        setBackgroundDrawable(backgroundDrawable);
     }
 
     public void setTitle(@StringRes int stringResource) {
@@ -99,6 +113,15 @@ public class SettingButton extends LinearLayout {
         } else {
             mTitle.setTextColor(getResources().getColor(android.R.color.darker_gray));
             mDescription.setTextColor(getResources().getColor(android.R.color.darker_gray));
+        }
+    }
+
+    private Drawable getBordersDrawableById(int bordersId) {
+        switch (bordersId) {
+            case BORDERS_BOTTOM:
+                return getContext().getResources().getDrawable(R.drawable.settings_button_background_border_bottom);
+            default:
+                return getContext().getResources().getDrawable(R.drawable.settings_button_background_border_none);
         }
     }
 }

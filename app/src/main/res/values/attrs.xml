@@ -2,10 +2,14 @@
 <resources>
 
     <declare-styleable name="SettingButton">
-        <attr name="titleText" format="string" />
-        <attr name="descriptionText" format="string" />
-        <attr name="titleForeground" format="color" />
-        <attr name="descriptionForeground" format="color" />
+        <attr name="sbTitleText" format="string" />
+        <attr name="sbDescriptionText" format="string" />
+        <attr name="sbTitleForeground" format="color" />
+        <attr name="sbDescriptionForeground" format="color" />
+        <attr name="sbBorders" format="enum">
+            <enum name="none" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
     </declare-styleable>
 
 </resources>
