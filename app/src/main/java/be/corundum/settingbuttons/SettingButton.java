@@ -119,9 +119,9 @@ public class SettingButton extends LinearLayout {
     private Drawable getBordersDrawableById(int bordersId) {
         switch (bordersId) {
             case BORDERS_BOTTOM:
-                return getContext().getResources().getDrawable(R.drawable.settings_button_background_border_bottom);
+                return getResources().getDrawable(R.drawable.settings_button_background_border_bottom);
             default:
-                return getContext().getResources().getDrawable(R.drawable.settings_button_background_border_none);
+                return getResources().getDrawable(R.drawable.settings_button_background_border_none);
         }
     }
 }
