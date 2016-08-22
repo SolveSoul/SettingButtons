@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -119,9 +120,9 @@ public class SettingButton extends LinearLayout {
     private Drawable getBordersDrawableById(int bordersId) {
         switch (bordersId) {
             case BORDERS_BOTTOM:
-                return getResources().getDrawable(R.drawable.settings_button_background_border_bottom);
+                return ContextCompat.getDrawable(getContext(), R.drawable.settings_button_background_border_bottom);
             default:
-                return getResources().getDrawable(R.drawable.settings_button_background_border_none);
+                return ContextCompat.getDrawable(getContext(), R.drawable.settings_button_background_border_none);
         }
     }
 }
