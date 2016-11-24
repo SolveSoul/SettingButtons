@@ -3,6 +3,7 @@ package be.corundum.settingbuttons;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
@@ -58,7 +59,11 @@ public class SettingButton extends LinearLayout {
     }
 
     public void setBorders(Drawable backgroundDrawable) {
-        setBackgroundDrawable(backgroundDrawable);
+        if(Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            setBackgroundDrawable(backgroundDrawable);
+        } else {
+            setBackground(backgroundDrawable);
+        }
     }
 
     public void setTitle(@StringRes int stringResource) {
