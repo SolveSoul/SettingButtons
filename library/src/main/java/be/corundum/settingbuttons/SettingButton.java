@@ -36,8 +36,8 @@ public class SettingButton extends LinearLayout {
 
         // Inflate views
         LayoutInflater.from(getContext()).inflate(R.layout.view_settings_button, this);
-        mTitle = (TextView)findViewById(R.id.settings_button_title);
-        mDescription = (TextView)findViewById(R.id.settings_button_description);
+        mTitle = (TextView) findViewById(R.id.settings_button_title);
+        mDescription = (TextView) findViewById(R.id.settings_button_description);
 
         // Load custom style attributes, if any
         if (attrs == null) {
@@ -59,7 +59,7 @@ public class SettingButton extends LinearLayout {
     }
 
     public void setBorders(Drawable backgroundDrawable) {
-        if(Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+        if (Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
             setBackgroundDrawable(backgroundDrawable);
         } else {
             setBackground(backgroundDrawable);
