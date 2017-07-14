@@ -23,4 +23,4 @@ This library can be installed via Gradle:
     compile 'com.github.SolveSoul:SettingButtons:1.0.1'
 
 ## Preview
-![ISample of the SettingButton in action](http://i.imgur.com/eyKdQBZ.png)
+![ISample of the SettingButton in action](http://i.imgur.com/eyKdQBZl.png)
