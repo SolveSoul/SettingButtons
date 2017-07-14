@@ -4,12 +4,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.SolveSoul'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.1'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 4
         versionName '1.0.3'
     }
@@ -22,5 +22,5 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
 }
